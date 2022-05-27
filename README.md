@@ -1,7 +1,7 @@
 
 # Man in the middle response interceptor
 
-This is an utility for modifying data from Json RESTFULL API responses.
+This is an utility for modifying data from Json RESTFUL API responses.
 
 > Originally made for prevent waiting specific expedients from the conecta project
 
