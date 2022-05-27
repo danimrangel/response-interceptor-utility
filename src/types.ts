@@ -1,5 +1,7 @@
 import { IncomingMessage, ServerResponse } from "http";
 
+type AllowedMethods = "GET" | "POST" | "PUT" | "DELETE" | "PATCH" | "HEAD" | "OPTIONS";
+
 export type Interceptor = (
   buffer: Buffer,
   proxyRes: IncomingMessage,
@@ -15,7 +17,7 @@ export interface IResolver {
 
 export interface IRequestTarget {
   endpoint: string;
-  method: string;
+  method: AllowedMethods;
   assign: AssignToBody;
   resolveByStart?: IResolver;
 }

@@ -74,13 +74,13 @@ To make it work you will need to place your request targets (of the type `IReque
   - **Required**: yes
   - **Description**: This is the literal endpoint that matches the request url.
 - **`method`**:
-  - **Type**: `AllowedMethod` (GET, PUT, DELETE, POST, PATCH)
+  - **Type**: `AllowedMethod` (GET, PUT, DELETE, POST, PATCH, etc.)
   - **Required**: yes
   - **Description**: This is the literal method that matches the request method.
 - **`resolveByStart`**:
   - **Type**: `IResolver`
   - **Required**: no
-  - **Description**: If it is set, the resolver will try to match the endpoint with the requested url by checking if the url starts with the endpoint
+  - **Description**: If this option is set, the resolver will try to match the endpoint with the requested url by checking if it starts with. (e.g. `/path/to/endpoint/a_param/yes_a_param/another_param` will pass `/path/to/endpoint`). Otherwise it always will check if path is equal match with url.
 - **`assign`**:
   - **Type**: `Record<string, any>`
   - **Required**: yes
@@ -91,6 +91,6 @@ To make it work you will need to place your request targets (of the type `IReque
 - **`paramAmountFilter`**:
   - **Type**: `number`
   - **Required**: yes
-  - **Description**: To prevent injecting data inside every response that matches non literal endpoints, you need to set the param amount of the endpoint (e.g. `/path/to/endpoint/{param1}/{param2}/{param3}` in this case you need to set this prop tho `3`)
+  - **Description**: To prevent injecting data inside every response that matches non literal endpoints, you need to set the param amount of the endpoint (e.g. `/path/to/endpoint/{param1}/{param2}/{param3}` in this case you need to set this prop to `3`)
 
 > **PLEASE NOTE**: resolveByStart could match some urls even if the param amount is set due to route similarity but the proxy never replaces the responses it just assigns it to the curren body, so response will be ok the majority of cases.
