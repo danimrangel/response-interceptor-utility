@@ -34,6 +34,14 @@ pnpm start
 
 > Always use dev script
 
+### Replace the original server url by the proxy url 
+
+Once you started the proxy server you will need to change the url of the original api to the proxy one (`http://localhost:3001` as default)
+> In the conecta project you have to to replace the local url inside `src/common/constants/env.ts` as in the next image:
+> 
+> ![image](https://user-images.githubusercontent.com/101884405/170985059-0b1729ee-59b1-4947-a65b-91d4febf7fdc.png)
+
+
 # Setup
 
 Basic guide to setup the proxy server
